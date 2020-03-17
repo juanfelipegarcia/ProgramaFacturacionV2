@@ -41,6 +41,8 @@ namespace ProgramaFacturacionV2
             int doc;
             string datoModificar;
             int numeroProductos = 0;
+            string nombreProducto;
+            
 
 
             int respuestaInicio = 0;
@@ -643,18 +645,52 @@ namespace ProgramaFacturacionV2
                                     {
                                         numeroProductos = i + 1;
 
-                                        foreach (var produc in listaProductos)
-                                        {
-                                            //Console.WriteLine("------------Productos Comprados--------");
-                                            //Console.WriteLine("Codigo Producto " + produc.IdProducto
-                                            //    + " Nombre Producto " + produc.NombreProducto
-                                            //    + " Valor Producto " + produc.Valor);
-                                            //listaFacturas.Add(factura);
-                                        }
+                                        Console.WriteLine("Cantidad disponible : " + listaProductos[i].stock);
                                         
 
+                                        Console.WriteLine("Ingrese la cantidad ");
+                                        int cantidad = int.Parse(Console.ReadLine());
+
+
+                                        if (listaProductos[i].stock < cantidad)
+                                        {
+
+                                            Console.WriteLine("No hay stock suficientes, hay: " + listaProductos[i].stock);
+                                            Console.WriteLine("Faltan : " + ( cantidad - listaProductos[i].stock ));
+                                        }
+                                        else if (listaProductos[i].stock > 0 )
+                                            //else if (listaProductos[i].stock > 0 && listaProductos[i].stock <= listaProductos[i].stock)
+                                                {
+                                            if (CodProd == listaProductos[i].IdProducto)
+                                            {
+                                                foreach (Producto prod in listaProductos)
+                                                {
+                                                    listaProductos[i].stock = listaProductos[i].stock - cantidad; 
+
+                                                }
+
+                                                
+
+                                            }
+                                            //listaProductos[i].stock = listaProductos[i].stock - cantidad;
+
+
+                                            //Console.WriteLine("Quedan: " + listaProductos[p].stock);
+                                            //int vp = producto.valorTotalProd(cantidad);
+                                            //factura.totalFactura = factura.totalFactura + vp;
+                                            factura.Cantidad = cantidad;
+                                        }
+
+                                    //foreach (var nomPro in listaProductos)
+                                        //{
+                                        //    nombreProducto = listaProductos[i].nombreProducto);
+                                        //}    
+
+
+
+
                                     }
-                                    
+
                                 }
                                 Console.WriteLine("¿Desea seguir ingresando productos?");
                                 if (Console.ReadLine().Equals("no"))
@@ -663,12 +699,18 @@ namespace ProgramaFacturacionV2
                                 }
 
                                 factura.NumeroProductos = numeroProductos;
+                                
+
+
+
+
 
                             }
+                            
                             factura.idFactura = idFactura;
                             factura.fecha = fecha;
                             factura.IdCliente = idCliente;
-                            
+                           
 
 
 
@@ -709,7 +751,7 @@ namespace ProgramaFacturacionV2
                                         Console.WriteLine("| número factura: " + fact.idFactura);
                                         Console.WriteLine("| Fecha : " + fact.fecha);
                                         Console.WriteLine("| Referencias compradas : " + fact.numeroProductos);
-                                        Console.WriteLine("|                                         |");
+                                        Console.WriteLine("| Idcliente : " + fact.idCliente);
                                         Console.WriteLine("|                                         |");
                                         Console.WriteLine("|_________________________________________|");
                                         // Console.WriteLine("número factura: " + fact.idFactura
@@ -736,7 +778,7 @@ namespace ProgramaFacturacionV2
                                     Console.WriteLine("| número factura: " + fact.idFactura);
                                     Console.WriteLine("| Fecha : " + fact.fecha);
                                     Console.WriteLine("| Referencias compradas : " + fact.numeroProductos);
-                                    Console.WriteLine("|                                         |");
+                                    Console.WriteLine("| Idcliente : " + fact.idCliente);
                                     Console.WriteLine("|                                         |");
                                     Console.WriteLine("|_________________________________________|");
                                     //Console.WriteLine("número factura: " + fact.idFactura

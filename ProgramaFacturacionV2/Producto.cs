@@ -20,7 +20,7 @@ namespace ProgramaFacturacionV2
         }
 
 
-        public Producto(int idProducto, string nombreProducto, int stock, int valor, int estadoProducto)
+        public Producto(int idProducto, string nombreProducto,  int valor, int stock, int estadoProducto)
         {
             this.idProducto = idProducto;
             this.nombreProducto = nombreProducto;
