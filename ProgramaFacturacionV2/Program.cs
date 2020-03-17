@@ -43,6 +43,7 @@ namespace ProgramaFacturacionV2
             int numeroProductos = 0;
             string nombreProducto;
             int codProd;
+            int codProdT;
 
 
             
@@ -582,12 +583,12 @@ namespace ProgramaFacturacionV2
 
                                     foreach (Cliente client in listaClientes)
                                     {
-                                        //Console.WriteLine("nombre: " + client.NombreCliente
-                                        //  + " documento: " + client.Documento
-                                        //  + " telefono: " + client.Telefono
-                                        //  + " edad: " + client.Edad
-                                        //  + " estado: " + client.Estado);
-                                        //listaFacturas.Add(factura);
+                                        if (client.documento == idCliente )
+                                        {
+                                            factura.cliente = client.nombreCliente;
+                                        }
+                                        
+                                       
                                     }
 
                                 }
@@ -604,19 +605,39 @@ namespace ProgramaFacturacionV2
                                 Console.WriteLine("|_________________________________________|");
                                 codProd = int.Parse(Console.ReadLine());
 
-                              
+                                foreach (var product in listaProductos)
+                                {
+                                    if (product.idProducto == codProd)
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine(" _________________________________________");
+                                        Console.WriteLine("|                                         |");
+                                       // Console.WriteLine("| Codigo producto: " + product.IdProducto);
+                                        Console.WriteLine("| Nombre: " + product.NombreProducto);
+                                        Console.WriteLine("| Valor: " + product.Valor);
+                                        Console.WriteLine("| Stock: " + product.Stock);
+                                        //Console.WriteLine("| Eestado: " + product.EstadoProducto);
+                                        Console.WriteLine("|_________________________________________|");
+
+                                        factura.producto = product.nombreProducto; 
+                                    }
+                                }
+
 
                                 for (int i = 0; i < listaProductos.Count; i++)
                                 {
                                     if (codProd == listaProductos[i].idProducto)
                                     {
                                         numeroProductos = i + 1;
+                                        codProdT = codProd + i;
 
                                         Console.WriteLine("Cantidad disponible : " + listaProductos[i].stock);
                                         
 
                                         Console.WriteLine("Ingrese la cantidad ");
                                         int cantidad = int.Parse(Console.ReadLine());
+
+                                        factura.cantidad = cantidad;
 
 
                                         if (listaProductos[i].stock < cantidad)
@@ -648,6 +669,7 @@ namespace ProgramaFacturacionV2
                                             
                                         //}
                                         factura.Cantidad = cantidad;
+                                        factura.idProducto = codProdT;
                                     }
                                 }
                                 Console.WriteLine("¿Desea seguir ingresando productos?");
@@ -656,7 +678,7 @@ namespace ProgramaFacturacionV2
                                     resp = false;
                                 }
                                 factura.NumeroProductos = numeroProductos;
-                                factura.idProducto = codProd;
+                                
                             }
                             factura.idFactura = idFactura;
                             factura.fecha = fecha;
@@ -691,13 +713,19 @@ namespace ProgramaFacturacionV2
                                         Console.WriteLine(" _________________________________________");
                                         Console.WriteLine("|                                         |");
                                         Console.WriteLine("| número factura: " + fact.idFactura);
-                                        Console.WriteLine("| Fecha : " + fact.fecha);
-                                        Console.WriteLine("| Referencias compradas : " + fact.numeroProductos);
-                                        Console.WriteLine("| Idcliente : " + fact.idCliente);
+                                        Console.WriteLine("| Fecha         : " + fact.fecha);
+                                        Console.WriteLine("| Referencias                             |");
+                                        Console.WriteLine("| Compradas     : " + fact.numeroProductos);
+                                        Console.WriteLine("| Idcliente     : " + fact.idCliente);
+                                        Console.WriteLine("| Cliente       : " + fact.cliente);
+                                        Console.WriteLine("| IdProducto    : " + fact.idProducto);
+                                        Console.WriteLine("| Producto      : " + fact.producto);
+                                        Console.WriteLine("| Producto      : " + fact.cantidad);
                                         Console.WriteLine("|                                         |");
                                         Console.WriteLine("|_________________________________________|");
                                     }
                                 }
+                               
                             }
                             else if (rta == 2)
                             {
@@ -708,12 +736,23 @@ namespace ProgramaFacturacionV2
                                     Console.WriteLine(" _________________________________________");
                                     Console.WriteLine("|                                         |");
                                     Console.WriteLine("| número factura: " + fact.idFactura);
-                                    Console.WriteLine("| Fecha : " + fact.fecha);
-                                    Console.WriteLine("| Referencias compradas : " + fact.numeroProductos);
-                                    Console.WriteLine("| Idcliente : " + fact.idCliente);
+                                    Console.WriteLine("| Fecha         : " + fact.fecha);
+                                    Console.WriteLine("| Referencias                             |");
+                                    Console.WriteLine("| Compradas     : " + fact.numeroProductos);
+                                    Console.WriteLine("| Idcliente     : " + fact.idCliente);
+                                    Console.WriteLine("| Cliente       : " + fact.cliente);
+                                    Console.WriteLine("| IdProducto    : " + fact.idProducto);
+                                    Console.WriteLine("| Producto      : " + fact.producto);
+                                    Console.WriteLine("| Producto      : " + fact.cantidad);
                                     Console.WriteLine("|                                         |");
                                     Console.WriteLine("|_________________________________________|");
+
+
+
                                 }
+                                
+
+
                             }
                         }
                         else if (rtaFacturar == 3)
