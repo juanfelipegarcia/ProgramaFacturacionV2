@@ -11,7 +11,8 @@ namespace ProgramaFacturacionV2
         public int idFactura;
         public int idCliente;
         public string fecha;
-        private int cantidad;
+        public int idProducto;
+        public int cantidad;
         public int numeroProductos;
         public double totalFactura = 0;
         public List<Cliente> listaClientes = new List<Cliente>();
@@ -22,5 +23,6 @@ namespace ProgramaFacturacionV2
         public int IdCliente { get => idCliente; set => idCliente = value; }
         public int NumeroProductos { get => numeroProductos; set => numeroProductos = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
+        public int IdProducto { get => idProducto; set => idProducto = value; }
     }
 }

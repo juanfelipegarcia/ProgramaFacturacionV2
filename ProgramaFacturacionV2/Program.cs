@@ -42,6 +42,9 @@ namespace ProgramaFacturacionV2
             string datoModificar;
             int numeroProductos = 0;
             string nombreProducto;
+            int codProd;
+
+
             
 
 
@@ -108,33 +111,47 @@ namespace ProgramaFacturacionV2
                             Console.WriteLine("|                                         |");
                             Console.WriteLine("|    Ingrese el documento del cliente     |");
                             Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("Ingrese el documento del cliente");
                             cliente.documento = int.Parse(Console.ReadLine());
-                            Console.Clear();
-                            Console.WriteLine(" _________________________________________");
-                            Console.WriteLine("|                                         |");
-                            Console.WriteLine("|      Ingrese el nombre del cliente      |");
-                            Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("Ingrese el nombre del cliente");
-                            cliente.nombreCliente = Console.ReadLine();
-                            Console.Clear();
-                            Console.WriteLine(" _________________________________________");
-                            Console.WriteLine("|                                         |");
-                            Console.WriteLine("|          Ingrese el telefono            |");
-                            Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("Ingrese el telefono");
-                            cliente.telefono = int.Parse(Console.ReadLine());
-                            Console.Clear();
-                            Console.WriteLine(" _________________________________________");
-                            Console.WriteLine("|                                         |");
-                            Console.WriteLine("|        Ingrese la edad del cliente      |");
-                            Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("Ingrese la edad del cliente");
-                            cliente.edad = int.Parse(Console.ReadLine());
 
+                                //for (int i = 0; i < listaClientes.Count; i++)
+                                //{
+                                //    if (cliente.documento == listaClientes[i].documento)
+                                //    {
+                                //        Console.WriteLine("Documento ya ingresado.... intente denuevo");
 
-                            listaClientes.Add(cliente);
+                                //        Console.WriteLine("¿Desea seguir ingresando productos?");
+                                //        if (Console.ReadLine().Equals("no"))
+                                //        {
+                                //            resp = false;
+                                //        }
+                                //    }
+                                //    //else
+                                //    //{
+                                //    //    cliente.documento = int.Parse(Console.ReadLine());
+                                //    //}
+                                //} 
+                                 
+                                
+                           Console.Clear();
+                           Console.WriteLine(" _________________________________________");
+                           Console.WriteLine("|                                         |");
+                           Console.WriteLine("|      Ingrese el nombre del cliente      |");
+                           Console.WriteLine("|_________________________________________|");
+                           cliente.nombreCliente = Console.ReadLine();
+                           Console.Clear();
+                           Console.WriteLine(" _________________________________________");
+                           Console.WriteLine("|                                         |");
+                           Console.WriteLine("|          Ingrese el telefono            |");
+                           Console.WriteLine("|_________________________________________|");
+                           cliente.telefono = int.Parse(Console.ReadLine());
+                           Console.Clear();
+                           Console.WriteLine(" _________________________________________");
+                           Console.WriteLine("|                                         |");
+                           Console.WriteLine("|        Ingrese la edad del cliente      |");
+                           Console.WriteLine("|_________________________________________|");
+                           cliente.edad = int.Parse(Console.ReadLine());
 
+                           listaClientes.Add(cliente);
 
 
                         }
@@ -146,7 +163,6 @@ namespace ProgramaFacturacionV2
                             Console.WriteLine("|      Digite el documento del cliente    |");
                             Console.WriteLine("|                a modificar              |");
                             Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("Digite el documento del cliente a modificar");
                             doc = int.Parse(Console.ReadLine());
 
                             for (int i = 0; i < listaClientes.Count; i++)
@@ -159,7 +175,6 @@ namespace ProgramaFacturacionV2
                                     Console.WriteLine("|             Desea modificar:            |");
                                     Console.WriteLine("|         nombre, edad o telefono         |");
                                     Console.WriteLine("|_________________________________________|");
-                                    //Console.WriteLine("Desea modificar: nombre, edad o telefono");
                                     datoModificar = Console.ReadLine();
                                     switch (datoModificar)
                                     {
@@ -169,7 +184,6 @@ namespace ProgramaFacturacionV2
                                             Console.WriteLine("|                                         |");
                                             Console.WriteLine("|          Ingrese el nuevo nombre        |");
                                             Console.WriteLine("|_________________________________________|");
-                                            //Console.WriteLine("Ingrese el nuevo nombre");
                                             string nomCliente = Console.ReadLine();
                                             listaClientes[i].nombreCliente = nomCliente;
                                             break;
@@ -179,7 +193,6 @@ namespace ProgramaFacturacionV2
                                             Console.WriteLine("|                                         |");
                                             Console.WriteLine("|          Ingrese la nueva edad          |");
                                             Console.WriteLine("|_________________________________________|");
-                                            //Console.WriteLine("Ingrese la nueva edad");
                                             int edadCliente = int.Parse(Console.ReadLine());
                                             listaClientes[i].edad = edadCliente;
                                             break;
@@ -189,7 +202,6 @@ namespace ProgramaFacturacionV2
                                             Console.WriteLine("|                                         |");
                                             Console.WriteLine("|        Ingrese el nuevo telefono        |");
                                             Console.WriteLine("|_________________________________________|");
-                                            //Console.WriteLine("Ingrese el nuevo telefono");
                                             int telCliente = int.Parse(Console.ReadLine());
                                             listaClientes[i].telefono = telCliente;
                                             break;
@@ -206,7 +218,6 @@ namespace ProgramaFacturacionV2
                             Console.WriteLine("|     Digite el documento del cliente     |");
                             Console.WriteLine("|          a modificar el estado          |");
                             Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("Digite el documento del cliente a modificar el estado");
                             doc = int.Parse(Console.ReadLine());
                             for (int i = 0; i < listaClientes.Count; i++)
                             {
@@ -222,7 +233,6 @@ namespace ProgramaFacturacionV2
                                     Console.WriteLine("| (0) para deshabilitar                   |");
                                     Console.WriteLine("| (1) para habilitar                      |");
                                     Console.WriteLine("|_________________________________________|");
-                                    //Console.WriteLine("Estado modificar: (1) para habilitar o (0) para deshabilitar");
                                     int estadoModificar = int.Parse(Console.ReadLine());
                                     switch (estadoModificar)
                                     {
@@ -252,7 +262,6 @@ namespace ProgramaFacturacionV2
                             Console.WriteLine("| (1) listar clientes por documento       |");
                             Console.WriteLine("| (2) listar todos los clientes           |");
                             Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("(1) listar clientes por documento (2) listar todos los clientes.");
                             rtaListar = int.Parse(Console.ReadLine());
                             Console.Clear();
 
@@ -264,7 +273,6 @@ namespace ProgramaFacturacionV2
                                 Console.WriteLine("|                                         |");
                                 Console.WriteLine("|     Ingrese el numero del documento     |");
                                 Console.WriteLine("|_________________________________________|");
-                                //Console.WriteLine("Ingrese el numero del documento");
                                 doc = int.Parse(Console.ReadLine());
 
                                 foreach (var client in listaClientes)
@@ -280,11 +288,6 @@ namespace ProgramaFacturacionV2
                                         Console.WriteLine("| Edad: " + client.Edad);
                                         Console.WriteLine("| Estado: " + client.Estado);
                                         Console.WriteLine("|_________________________________________|");
-                                        // Console.WriteLine("nombre: " + client.NombreCliente
-                                        //+ " documento: " + client.Documento
-                                        //+ " telefono: " + client.Telefono
-                                        //+ " edad: " + client.Edad
-                                        //+ " estado: " + client.Estado);
                                     }
                                 }
                             }
@@ -303,13 +306,7 @@ namespace ProgramaFacturacionV2
                                     Console.WriteLine("| Edad: " + client.Edad);
                                     Console.WriteLine("| Estado: " + client.Estado);
                                     Console.WriteLine("|_________________________________________|");
-                                    //Console.WriteLine("nombre: " + client.NombreCliente
-                                    //        + " documento: " + client.Documento
-                                    //        + " telefono: " + client.Telefono
-                                    //        + " edad: " + client.Edad
-                                    //        + " estado: " + client.Estado);
                                 }
-
                             }
                         }
                         else if (respuestaCliente == 5)
@@ -352,25 +349,21 @@ namespace ProgramaFacturacionV2
                             Console.WriteLine("|                                         |");
                             Console.WriteLine("|      Ingrese el codigo del producto     |");
                             Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("Ingrese el codigo del producto");
                             producto.idProducto = int.Parse(Console.ReadLine());
                             Console.WriteLine(" _________________________________________");
                             Console.WriteLine("|                                         |");
                             Console.WriteLine("|      Ingrese el nombre del producto     |");
                             Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("Ingrese el nombre del producto");
                             producto.nombreProducto = Console.ReadLine();
                             Console.WriteLine(" _________________________________________");
                             Console.WriteLine("|                                         |");
                             Console.WriteLine("|      Ingrese el valor del producto      |");
                             Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("Ingrese el valor del producto");
                             producto.valor = int.Parse(Console.ReadLine());
                             Console.WriteLine(" _________________________________________");
                             Console.WriteLine("|                                         |");
                             Console.WriteLine("|       Ingrese el stock del producto     |");
                             Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("Ingrese el stock del producto");
                             producto.stock = int.Parse(Console.ReadLine());
 
                             listaProductos.Add(producto);
@@ -384,7 +377,6 @@ namespace ProgramaFacturacionV2
                             Console.WriteLine("|      Ingrese el codigo del producto     |");
                             Console.WriteLine("|           a cambiar de estado           |");
                             Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("Ingrese el codigo del producto a cambiar de estado");
                             int codModificar = int.Parse(Console.ReadLine());
 
                             for (int i = 0; i < listaProductos.Count; i++)
@@ -398,7 +390,6 @@ namespace ProgramaFacturacionV2
                                     Console.WriteLine("| (0) para deshabilitar                   |");
                                     Console.WriteLine("| (1) para habilitar                      |");
                                     Console.WriteLine("|_________________________________________|");
-                                    //Console.WriteLine("(0) para deshabilitar producto, (1) para habilitar");
                                     int cambEstadoP = int.Parse(Console.ReadLine());
                                     switch (cambEstadoP)
                                     {
@@ -421,7 +412,6 @@ namespace ProgramaFacturacionV2
                             Console.WriteLine("|      Digite el codigo del producto      |");
                             Console.WriteLine("|                a modificar              |");
                             Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("Digite el codigo del producto a modificar");
                             doc = int.Parse(Console.ReadLine());
 
                             for (int i = 0; i < listaProductos.Count; i++)
@@ -434,7 +424,6 @@ namespace ProgramaFacturacionV2
                                     Console.WriteLine("|             Desea modificar:            |");
                                     Console.WriteLine("|          nombre, precio o stock         |");
                                     Console.WriteLine("|_________________________________________|");
-                                    //Console.WriteLine("Desea modificar: nombre, precio o stock");
                                     datoModificar = Console.ReadLine();
                                     switch (datoModificar)
                                     {
@@ -444,7 +433,6 @@ namespace ProgramaFacturacionV2
                                             Console.WriteLine("|                                         |");
                                             Console.WriteLine("|  Ingrese el nuevo nombre del producto   |");
                                             Console.WriteLine("|_________________________________________|");
-                                            //Console.WriteLine("Ingrese el nuevo nombre del producto");
                                             string nomProducto = Console.ReadLine();
                                             listaProductos[i].nombreProducto = nomProducto;
                                             break;
@@ -454,7 +442,6 @@ namespace ProgramaFacturacionV2
                                             Console.WriteLine("|                                         |");
                                             Console.WriteLine("|         Ingrese la nuevo precio         |");
                                             Console.WriteLine("|_________________________________________|");
-                                            //Console.WriteLine("Ingrese la nuevo precio");
                                             int precioProducto = int.Parse(Console.ReadLine());
                                             listaProductos[i].valor = precioProducto;
                                             break;
@@ -464,7 +451,6 @@ namespace ProgramaFacturacionV2
                                             Console.WriteLine("|                                         |");
                                             Console.WriteLine("|          Ingrese el nuevo stock         |");
                                             Console.WriteLine("|_________________________________________|");
-                                            //Console.WriteLine("Ingrese el nuevo stock");
                                             int stockproduct = int.Parse(Console.ReadLine());
                                             listaProductos[i].stock = stockproduct;
                                             break;
@@ -486,7 +472,6 @@ namespace ProgramaFacturacionV2
                             Console.WriteLine("| (1) listar producto por Id              |");
                             Console.WriteLine("| (2) listar todos los productos          |");
                             Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("(1) listar producto por id (2) listar todos los productos.");
                             rtaListar = int.Parse(Console.ReadLine());
 
                             if (rtaListar == 1)
@@ -497,7 +482,6 @@ namespace ProgramaFacturacionV2
                                 Console.WriteLine("|                                         |");
                                 Console.WriteLine("|        Ingrese el numero del id         |");
                                 Console.WriteLine("|_________________________________________|");
-                                //Console.WriteLine("Ingrese el numero del id");
                                 doc = int.Parse(Console.ReadLine());
 
                                 foreach (var product in listaProductos)
@@ -513,11 +497,7 @@ namespace ProgramaFacturacionV2
                                         Console.WriteLine("| Stock: " + product.Stock);
                                         Console.WriteLine("| Eestado: " + product.EstadoProducto);
                                         Console.WriteLine("|_________________________________________|");
-                                        // Console.WriteLine("codigo producto: " + product.IdProducto
-                                        //+ " nombre: " + product.NombreProducto
-                                        //+ " valor: " + product.Valor
-                                        //+ " stock: " + product.Stock
-                                        //+ " estado: " + product.EstadoProducto);
+
                                     }
                                 }
                             }
@@ -536,11 +516,7 @@ namespace ProgramaFacturacionV2
                                     Console.WriteLine("| Stock: " + product.Stock);
                                     Console.WriteLine("| Eestado: " + product.EstadoProducto);
                                     Console.WriteLine("|_________________________________________|");
-                                    //Console.WriteLine("codigo producto: " + product.IdProducto
-                                    //   + " nombre: " + product.NombreProducto
-                                    //   + " valor: " + product.Valor
-                                    //   + " stock: " + product.Stock
-                                    //   + " estado: " + product.EstadoProducto);
+
                                 }
 
                             }
@@ -575,10 +551,7 @@ namespace ProgramaFacturacionV2
                         Console.WriteLine("| (2) listar todas las facturas           |");
                         Console.WriteLine("| (3) Salir de Facturacion                |");
                         Console.WriteLine("|_________________________________________|");
-                        //////Console.WriteLine("(1) Agregar Factura (2) listar todas las facturas");
                         rtaFacturar = int.Parse(Console.ReadLine());
-
-                        //idFactura = listaFacturas.Count + 1;
 
                         if (rtaFacturar == 1)
                         {
@@ -600,13 +573,7 @@ namespace ProgramaFacturacionV2
                             Console.WriteLine("|                                         |");
                             Console.WriteLine("|    Ingrese el documento del cliente     |");
                             Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("Ingrese el documento del cliente");
                             int idCliente = int.Parse(Console.ReadLine());
-
-                            //factura.idFactura = idFactura;
-                            //factura.fecha = fecha;
-                            //factura.IdCliente = idCliente;
-
 
                             for (int i = 0; i < listaClientes.Count; i++)
                             {
@@ -635,13 +602,13 @@ namespace ProgramaFacturacionV2
                                 Console.WriteLine("|                                         |");
                                 Console.WriteLine("| Ingrese el codigo del producto comprado |");
                                 Console.WriteLine("|_________________________________________|");
-                                int CodProd = int.Parse(Console.ReadLine());
+                                codProd = int.Parse(Console.ReadLine());
 
                               
 
                                 for (int i = 0; i < listaProductos.Count; i++)
                                 {
-                                    if (CodProd == listaProductos[i].idProducto)
+                                    if (codProd == listaProductos[i].idProducto)
                                     {
                                         numeroProductos = i + 1;
 
@@ -658,65 +625,43 @@ namespace ProgramaFacturacionV2
                                             Console.WriteLine("No hay stock suficientes, hay: " + listaProductos[i].stock);
                                             Console.WriteLine("Faltan : " + ( cantidad - listaProductos[i].stock ));
                                         }
-                                        else if (listaProductos[i].stock > 0 )
-                                            //else if (listaProductos[i].stock > 0 && listaProductos[i].stock <= listaProductos[i].stock)
-                                                {
-                                            if (CodProd == listaProductos[i].IdProducto)
-                                            {
-                                                foreach (Producto prod in listaProductos)
-                                                {
-                                                    listaProductos[i].stock = listaProductos[i].stock - cantidad; 
+                                        //else if (listaProductos[i].stock > 0 )
+                                        //    //else if (listaProductos[i].stock > 0 && listaProductos[i].stock <= listaProductos[i].stock)
+                                        //        {
+                                        //    if (codProd == listaProductos[i].IdProducto)
+                                        //    {
+                                        //        foreach (Producto prod in listaProductos)
+                                        //        {
+                                        //            listaProductos[i].stock = listaProductos[i].stock - cantidad; 
 
-                                                }
+                                        //        }
 
                                                 
 
-                                            }
-                                            //listaProductos[i].stock = listaProductos[i].stock - cantidad;
+                                        //    }
+                                        //    //listaProductos[i].stock = listaProductos[i].stock - cantidad;
 
 
-                                            //Console.WriteLine("Quedan: " + listaProductos[p].stock);
-                                            //int vp = producto.valorTotalProd(cantidad);
-                                            //factura.totalFactura = factura.totalFactura + vp;
-                                            factura.Cantidad = cantidad;
-                                        }
-
-                                    //foreach (var nomPro in listaProductos)
-                                        //{
-                                        //    nombreProducto = listaProductos[i].nombreProducto);
-                                        //}    
-
-
-
-
+                                        //    //Console.WriteLine("Quedan: " + listaProductos[p].stock);
+                                        //    //int vp = producto.valorTotalProd(cantidad);
+                                        //    //factura.totalFactura = factura.totalFactura + vp;
+                                            
+                                        //}
+                                        factura.Cantidad = cantidad;
                                     }
-
                                 }
                                 Console.WriteLine("¿Desea seguir ingresando productos?");
                                 if (Console.ReadLine().Equals("no"))
                                 {
                                     resp = false;
                                 }
-
                                 factura.NumeroProductos = numeroProductos;
-                                
-
-
-
-
-
+                                factura.idProducto = codProd;
                             }
-                            
                             factura.idFactura = idFactura;
                             factura.fecha = fecha;
                             factura.IdCliente = idCliente;
-                           
-
-
-
-
                             listaFacturas.Add(factura);
-
                         }
                         else if (rtaFacturar == 2)
                         {
@@ -729,7 +674,6 @@ namespace ProgramaFacturacionV2
                             Console.WriteLine("| (1) listar por codigo factura           |");
                             Console.WriteLine("| (2) todas las facturas                  |");
                             Console.WriteLine("|_________________________________________|");
-                            //Console.WriteLine("(1) para listar por codigo factura (2) todas las facturas");
                             int rta = int.Parse(Console.ReadLine());
                             if (rta == 1)
                             {
@@ -738,14 +682,12 @@ namespace ProgramaFacturacionV2
                                 Console.WriteLine("|                                         |");
                                 Console.WriteLine("|    Ingrese el numero de la factura      |");
                                 Console.WriteLine("|_________________________________________|");
-                                //Console.WriteLine("Ingrese el numero de la factura");
                                 doc = int.Parse(Console.ReadLine());
 
                                 foreach (var fact in listaFacturas)
                                 {
                                     if (fact.idFactura == doc)
                                     {
-                                        
                                         Console.WriteLine(" _________________________________________");
                                         Console.WriteLine("|                                         |");
                                         Console.WriteLine("| número factura: " + fact.idFactura);
@@ -754,19 +696,9 @@ namespace ProgramaFacturacionV2
                                         Console.WriteLine("| Idcliente : " + fact.idCliente);
                                         Console.WriteLine("|                                         |");
                                         Console.WriteLine("|_________________________________________|");
-                                        // Console.WriteLine("número factura: " + fact.idFactura
-                                        //+ " Fecha : " + fact.fecha
-                                        //+ " Cliente : " + fact.listaClientes);
-
-
-
-
-
                                     }
                                 }
-
                             }
-
                             else if (rta == 2)
                             {
                                 //listar todos los productos
@@ -781,67 +713,57 @@ namespace ProgramaFacturacionV2
                                     Console.WriteLine("| Idcliente : " + fact.idCliente);
                                     Console.WriteLine("|                                         |");
                                     Console.WriteLine("|_________________________________________|");
-                                    //Console.WriteLine("número factura: " + fact.idFactura
-                                    //   + " Fecha : " + fact.fecha
-                                    //   + " Cliente : " + fact.listaClientes);
                                 }
-
-
-
                             }
-
                         }
-
                         else if (rtaFacturar == 3)
-
                         {
                             resp = false;
                         }
-
-
-
-
                     }
                 }
                 else if (respuestaInicio == 4)
                 {
-                    //resp = true;
-                    //while (resp != false)
-
-
-                    //reportes
-                    int rtaReportes;
-                    Console.Clear();
-                    Console.WriteLine(" _________________________________________");
-                    Console.WriteLine("|                                         |");
-                    Console.WriteLine("|      KREMO SISTEMA DE FACTURACION       |");
-                    Console.WriteLine("|                 REPORTES                |");
-                    Console.WriteLine("|_________________________________________|");
-                    Console.WriteLine("|                                         |");
-                    Console.WriteLine("| (1) Clientes mayores 30 años            |");
-                    Console.WriteLine("| (2) Producto con Stock menor a 2 unds   |");
-                    Console.WriteLine("| (3) Facturas con valor mayor a $200.000 |");
-                    Console.WriteLine("|_________________________________________|");
-                    //Console.WriteLine("(1) Clientes > 30 años (2) Producto con Stock<2 (3) Facturas>200.000$.");
-                    rtaReportes = int.Parse(Console.ReadLine());
-
-                    if (rtaReportes == 1)
+                    resp = true;
+                    while (resp != false)
                     {
-                        Console.WriteLine("clientes mayores de 30 años");
+                        //reportes
+                        int rtaReportes;
+                        Console.Clear();
+                        Console.WriteLine(" _________________________________________");
+                        Console.WriteLine("|                                         |");
+                        Console.WriteLine("|      KREMO SISTEMA DE FACTURACION       |");
+                        Console.WriteLine("|                 REPORTES                |");
+                        Console.WriteLine("|_________________________________________|");
+                        Console.WriteLine("|                                         |");
+                        Console.WriteLine("| (1) Clientes mayores 30 años            |");
+                        Console.WriteLine("| (2) Producto con Stock menor a 2 unds   |");
+                        Console.WriteLine("| (3) Facturas con valor mayor a $200.000 |");
+                        Console.WriteLine("| (4) Salir de Reportes                   |");
+                        Console.WriteLine("|_________________________________________|");
+                        rtaReportes = int.Parse(Console.ReadLine());
 
-                    }
-                    else if (rtaReportes == 2)
-                    {
-                        Console.WriteLine("clientes con Stock menor a 2 unidades");
-                    }
-                    else if (rtaReportes == 3)
-                    {
-                        Console.WriteLine("Facturas con valor mayor a $200.000");
+                        if (rtaReportes == 1)
+                        {
+                            Console.WriteLine("clientes mayores de 30 años");
+                        }
+                        else if (rtaReportes == 2)
+                        {
+                            Console.WriteLine("clientes con Stock menor a 2 unidades");
+                        }
+                        else if (rtaReportes == 3)
+                        {
+                            Console.WriteLine("Facturas con valor mayor a $200.000");
+                        }
+
+                        else if (rtaReportes == 4)
+
+                        {
+                            resp = false;
+                        }
                     }
 
                 }
-
-
             }
         }
     }
