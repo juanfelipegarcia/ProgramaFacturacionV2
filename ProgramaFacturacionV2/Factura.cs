@@ -20,6 +20,7 @@ namespace ProgramaFacturacionV2
         public double totalFactura = 0;
         public List<Cliente> listaClientes = new List<Cliente>();
         public List<Producto> listaProductos = new List<Producto>();
+        List<ProductosFactura> listaProductosFactura = new List<ProductosFactura>();
 
         public int IdFactura { get => idFactura; set => idFactura = value; }
         public string Fecha { get => fecha; set => fecha = value; }

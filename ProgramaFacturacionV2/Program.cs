@@ -11,7 +11,6 @@ namespace ProgramaFacturacionV2
         static void Main(string[] args)
         {
             List<Cliente> listaClientes = new List<Cliente>();
-
          
             listaClientes.Add(new Cliente(1,"Luisa", 1234444, 21, 1));
             listaClientes.Add(new Cliente(2, "Carolina", 3215555, 25, 1));
@@ -19,12 +18,8 @@ namespace ProgramaFacturacionV2
             listaClientes.Add(new Cliente(4, "Giver", 6784444, 20, 1));
             listaClientes.Add(new Cliente(5, "Juan", 9872222, 40, 1));
             listaClientes.Add(new Cliente(6, "Pedro", 2225555, 50, 1));
-
-
-            List<Factura> listaFacturas = new List<Factura>();
                                  
             List<Producto> listaProductos = new List<Producto>();
-
 
             listaProductos.Add(new Producto(1, "Arroz", 1970, 20, 1));
             listaProductos.Add(new Producto(2, "Leche", 2000, 50, 1));
@@ -33,7 +28,10 @@ namespace ProgramaFacturacionV2
             listaProductos.Add(new Producto(5, "Aceite", 4000, 50, 1));
             listaProductos.Add(new Producto(6, "Papa", 2300, 40, 1));
 
-            
+            List<Factura> listaFacturas = new List<Factura>();
+
+            List<ProductosFactura> listaProductosFactura = new List<ProductosFactura>();
+
 
 
             int idFactura;
